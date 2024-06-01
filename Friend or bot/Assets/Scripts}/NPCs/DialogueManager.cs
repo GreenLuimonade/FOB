@@ -12,7 +12,7 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI DialogTitleText, DialogBodyText; // Text components for title and body
     public GameObject responseButtonPrefab; // Prefab for generating response buttons
     public Transform responseButtonContainer; // Container to hold response buttons
-    public GameObject player;
+    public GameObject image;
 
     private void Awake()
     {
@@ -54,6 +54,8 @@ public class DialogueManager : MonoBehaviour
 
             // Setup button to trigger SelectResponse when clicked
             buttonObj.GetComponent<Button>().onClick.AddListener(() => SelectResponse(response, title));
+            buttonObj.GetComponent<Button>().onClick.AddListener(() => ShowImage());
+
         }
     }
 
@@ -76,12 +78,18 @@ public class DialogueManager : MonoBehaviour
     public void HideDialogue()
     {
         DialogueParent.SetActive(false);
+        image.SetActive(false);
     }
 
     // Show the dialogue UI
     private void ShowDialogue()
     {
         DialogueParent.SetActive(true);
+    }
+
+    private void ShowImage() 
+    {
+        image.SetActive(true);
     }
 
     // Check if dialogue is currently active
