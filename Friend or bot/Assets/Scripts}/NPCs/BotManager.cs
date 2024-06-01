@@ -19,7 +19,8 @@ public class BotManager : MonoBehaviour
             int y = Random.Range(0, 6);
             int z = Random.Range(0, 6);
             int w = Random.Range(0, 6);
-            if (NEnemies!=0)
+            int a = Random.Range(0, 1);
+            if ((NEnemies!=0) && (a==0))
             {
                 Tipo = "Enemy";
                 NEnemies--;

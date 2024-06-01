@@ -14,22 +14,22 @@ public class Bot : MonoBehaviour,Interactuable
     public int NBot = 1;
     public BotManager Manager;
 
+
     public Bot(string nom, string ojos, string pelo, string ropa,int a,string tipo) 
     {
         Nombre = nom;
         ColorOjos = ojos;
         Colorpelo = pelo;
         Ropa = ropa;
+        NBot = a;
+        this.tipo = tipo;
     }
     public Bot(BotManager manager,int a)
     {
         Manager = manager;
-    }
-
-    private void Start()
-    {
 
     }
+
 
 
     private void Update()
@@ -91,13 +91,14 @@ public class Bot : MonoBehaviour,Interactuable
  
     public void hablar(string c/*caracteristica que vio*/)
     {
+        string caracteristica;
         DialogueManager.Instance.StartDialogue(Nombre, Dialogue.RootNode);
-        //if (tipo == "Enemy") { 
+        if (tipo == "Enemy") { 
         //logica de aleatoriedad de mentira
         //caracteristica == caracteristica aleatoria de otro bot;
-        //}else
-        string caracteristica = c;
-        //npc.hablar(caracteristica);
+        }
+        else
+         caracteristica = c;
     }
 
     public void interactuar()
