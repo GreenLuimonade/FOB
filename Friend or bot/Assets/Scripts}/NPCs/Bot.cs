@@ -10,24 +10,35 @@ public class Bot : MonoBehaviour,Interactuable
     public string Ropa;
     public string car = "";
     public Dialogue Dialogue;
-    public NPC npc;
-    public GameObject NPC;
-    //public BotManager Manager;
+    public string tipo;
+    public int NBot = 1;
+    public BotManager Manager;
 
-    public Bot(NPC npc)
+    public Bot(string nom, string ojos, string pelo, string ropa,int a) 
     {
-        this.npc = npc;
-        Nombre = npc.getNombre();
-        Dialogue = npc.GetDialogue();
+        Nombre = nom;
+        ColorOjos = ojos;
+        Colorpelo = pelo;
+        Ropa = ropa;
     }
- 
+    public Bot(BotManager manager,int a)
+    {
+        Manager = manager;
+    }
+
+    private void Start()
+    {
+
+    }
+
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //todo logica de caracteristica
 
-            if (npc.tipo == "Enemy")
+            if (tipo == "Enemy")
             {
                 int x = Random.Range(1, 3);
                 switch (x)
@@ -81,7 +92,7 @@ public class Bot : MonoBehaviour,Interactuable
     public void hablar(string c/*caracteristica que vio*/)
     {
         DialogueManager.Instance.StartDialogue(Nombre, Dialogue.RootNode);
-        //if (npc.tipo == "Enemy") { 
+        //if (tipo == "Enemy") { 
         //logica de aleatoriedad de mentira
         //caracteristica == caracteristica aleatoria de otro bot;
         //}else
