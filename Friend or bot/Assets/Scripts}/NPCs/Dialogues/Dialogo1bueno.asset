@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfc01a504e3404249bb8739ff14d2e09, type: 3}
+  m_Name: Dialogo1bueno
+  m_EditorClassIdentifier: 
+  RootNode:
+    dialogueText: Hola, supongo que vienes a preguntar sobre si vi algo
+    responses:
+    - responseText: correcto, que viste?
+      nextNode:
+        dialogueText: aca tengo que vincular cosas
+        responses:
+        - responseText: 
+          nextNode:
+            dialogueText: 
+            responses: []
+    - responseText: no, vine a capturarte! (capturar)
+      nextNode:
+        dialogueText: que? no puede ser, yo no hice nada
+        responses:
+        - responseText: Fuiste tu
+          nextNode:
+            dialogueText: 
+            responses: []
