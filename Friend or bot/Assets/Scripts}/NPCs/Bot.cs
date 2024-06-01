@@ -14,7 +14,7 @@ public class Bot : MonoBehaviour,Interactuable
     public int NBot = 1;
     public BotManager Manager;
 
-    public Bot(string nom, string ojos, string pelo, string ropa,int a) 
+    public Bot(string nom, string ojos, string pelo, string ropa,int a,string tipo) 
     {
         Nombre = nom;
         ColorOjos = ojos;

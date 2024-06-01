@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BotManager : MonoBehaviour
 {
+    int NEnemies=1;
+    string Tipo;
     public List<Bot> bots = new List<Bot>();
     List<string> nombres = new List<string>{"juan","camilo","ana","juana","camila","manuel"};
     List<string> color = new List<string> { "rojo", "cafe", "negro", "verde", "azul", "dorado" };
@@ -17,7 +19,15 @@ public class BotManager : MonoBehaviour
             int y = Random.Range(0, 6);
             int z = Random.Range(0, 6);
             int w = Random.Range(0, 6);
-            Bot Bot = new Bot(nombres[x],color[y],color[z],ropa[w],i);
+            if (NEnemies!=0)
+            {
+                Tipo = "Enemy";
+                NEnemies--;
+            }
+            else
+                Tipo ="Friend";
+
+            Bot Bot = new Bot(nombres[x],color[y],color[z],ropa[w],i,Tipo);
             bots.Add(Bot);
         }
     }
