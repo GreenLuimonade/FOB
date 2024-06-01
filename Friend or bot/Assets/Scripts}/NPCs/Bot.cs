@@ -12,7 +12,7 @@ public class Bot : MonoBehaviour,Interactuable
     public Dialogue Dialogue;
     public NPC npc;
     public GameObject NPC;
-    public BotManager Manager;
+    //public BotManager Manager;
 
     public Bot(NPC npc)
     {
